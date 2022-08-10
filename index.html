@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="css/style.css">
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="/style.css">
+<!-- <script src="/index.js"></script> -->
 </head>
 <body>
     <h1>Input the following details</h1>
@@ -19,9 +19,10 @@
         form.setAttribute("method","post");
         doc.appendChild(form);
 
-        var classLabel=document.createElement('label')
-        classLabel.innerHTML="Class :"
-        form.appendChild(classLabel)
+
+        var classLabel=document.createElement('label');
+        classLabel.innerHTML="Class :";
+        form.appendChild(classLabel);
 
         var classinput = document.createElement('input');
         classinput.setAttribute("type", "text");
@@ -31,9 +32,9 @@
         var linebreak = document.createElement('br');
         form.appendChild(linebreak);
 
-        var subjectlabel=document.createElement('label')
-        subjectlabel.innerHTML="Subject :"
-        form.appendChild(subjectlabel)
+        var subjectlabel=document.createElement('label');
+        subjectlabel.innerHTML="Subject :";
+        form.appendChild(subjectlabel);
 
         var subjectinput = document.createElement('input');
         subjectinput.setAttribute("type", "text");
@@ -43,9 +44,9 @@
         var linebreak = document.createElement('br');
         form.appendChild(linebreak);
 
-        var datelabel=document.createElement('label')
-        datelabel.innerHTML="Date :"
-        form.appendChild(datelabel)
+        var datelabel=document.createElement('label');
+        datelabel.innerHTML="Date :";
+        form.appendChild(datelabel);
 
         var dateinput = document.createElement('input');
         dateinput.setAttribute("type", "date");
@@ -59,7 +60,8 @@
         form.appendChild(submitelement);
 
 
-        var x = document.getElementsByName("form").elements.length;
+        var x = document.getElementsByName("form").elements.namedItem("input").value;
+        document.getElementsByClassName("container").innerHTML = form;
 
         var form = document.querySelector("form");
         var submiting = function (mine) {
