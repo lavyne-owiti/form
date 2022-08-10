@@ -63,9 +63,6 @@
 
         var form = document.querySelector("form");
         var submiting = function (mine) {
-        // remove the preventDefault
-        // added just to demonstrate the value is true
-        // without proceeding with submittion and pg refresh
         mine.preventDefault()
         form.setAttribute('submitted-data', true)
         console.log(form.getAttribute('submitted-data'))
@@ -88,7 +85,7 @@
 
 
 
-<!-- it used to refer to the global object name -->
+<!-- in a function it refers to the global object and in an object method it refers to the object.-->
 
 var hopperLab = {
     name: "bar",
