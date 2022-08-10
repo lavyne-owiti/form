@@ -4,11 +4,110 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Change_ne</title>
+    <title></title>
     <link rel="stylesheet" href="css/style.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
+    <h1>Input the following details</h1>
+    <div class="container">
+    </div>
+    <script>
+        var doc=document.getElementsByClassName("container");
+        var form=document.createElement("form");
+        form.setAttribute("action","");
+        form.setAttribute("method","post");
+        doc.appendChild(form);
+
+        var classLabel=document.createElement('label')
+        classLabel.innerHTML="Class :"
+        form.appendChild(classLabel)
+
+        var classinput = document.createElement('input');
+        classinput.setAttribute("type", "text");
+        classinput.setAttribute("class", "aclass");
+        form.appendChild(classinput);
+
+        var linebreak = document.createElement('br');
+        form.appendChild(linebreak);
+
+        var subjectlabel=document.createElement('label')
+        subjectlabel.innerHTML="Subject :"
+        form.appendChild(subjectlabel)
+
+        var subjectinput = document.createElement('input');
+        subjectinput.setAttribute("type", "text");
+        subjectinput.setAttribute("subject", "asubject");
+        form.appendChild(subjectinput);
+
+        var linebreak = document.createElement('br');
+        form.appendChild(linebreak);
+
+        var datelabel=document.createElement('label')
+        datelabel.innerHTML="Date :"
+        form.appendChild(datelabel)
+
+        var dateinput = document.createElement('input');
+        dateinput.setAttribute("type", "date");
+        dateinput.setAttribute("value", "10/08/2022");
+        form.appendChild(dateinput);
+
+        var submitelement = document.createElement('input'); 
+        submitelement.setAttribute("type", "submit");
+        submitelement.setAttribute("name", "dsubmit");
+        submitelement.setAttribute("value", "Submit");
+        form.appendChild(submitelement);
+
+
+        var x = document.getElementsByName("form").elements.length;
+
+        var form = document.querySelector("form");
+        var submiting = function (mine) {
+        // remove the preventDefault
+        // added just to demonstrate the value is true
+        // without proceeding with submittion and pg refresh
+        mine.preventDefault()
+        form.setAttribute('submitted-data', true)
+        console.log(form.getAttribute('submitted-data'))
+        handlemycalls()
+        }
+        var handlemycalls = function () {
+        console.log('You have submited successfully')
+        }
+        form.addEventListener('submit', handleSubmit, false)
+
+
+
+
+
+    </script>
     
 </body>
 </html>
+
+
+
+
+<!-- it used to refer to the global object name -->
+
+var hopperLab = {
+    name: "bar",
+    func: function() {
+    var self = this;
+    console.log("outer func: this.name = " + this.name);
+    console.log("outer func: self.name = " + self.name);
+    (function() {
+    console.log("inner func: this.name = " + this.name);
+    console.log("inner func: self.name = " + self.name);
+    }());
+    }
+    };
+    hopperLab.func();
+
+
+
+    <!-- it will output -->
+outer func: this.name = bar
+outer func: self.name = bar
+inner func: this.name = undefined
+inner func: self.name = bar
